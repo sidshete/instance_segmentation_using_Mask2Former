@@ -25,6 +25,7 @@ python -m pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wh
 python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
 ```
 - Clone this repository, go  to it and run `pip install -r requirements.txt`
+- Download weights from [here](https://cloud.dfki.de/owncloud/index.php/s/iYHg7b5rZRQH3Q7) and store them into **mask2former-custom-instance-segmentation** folder, so the path will look like `mask2former-custom-instance-segmentation/weights` and inside **weights** folder all **.pkl** files.
 
 ## Prepare dataset
 Make dataset in COCO format (annotations should be in [Object Detection](https://cocodataset.org/#format-data) format).
@@ -80,11 +81,11 @@ TEST:
 ## Train 
 Run `train_net.py` with corresponding configuration file like this:
 ```
-cd scr
+cd src
 export DATA_PATH=path/to/your/coco/dataset
 python train_net.py --config-file ../configs/coco/instance-segmentation/swin/maskformer2_swin_base_384_bs16_50ep.yaml --num-gpus 1
 ```
-Logs, metrics and weights after training will be saved in new directory `scr/output`. (don't forget to clean it before, so new metrics won't overlap the old ones).
+Logs, metrics and weights after training will be saved in new directory `src/output`. (don't forget to clean it before, so new metrics won't overlap the old ones).
 
 ## Inference check
 By default we are not using bounding boxes (”instance segmentation is not
@@ -105,7 +106,7 @@ And compare the rusult with this:
 
 ## Hyperparameter optimization
 ```
-cd scr
+cd src
 export DATA_PATH=path/to/your/coco/dataset
 python hyperparameters.py --config-file ../configs/coco/instance-segmentation/swin/maskformer2_swin_base_384_bs16_50ep.yaml --num-gpus 1
 ```
