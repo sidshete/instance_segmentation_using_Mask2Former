@@ -1,0 +1,9 @@
+cython
+scipy
+shapely
+timm
+h5py
+submitit
+scikit-image
+numpy==1.23.1
+pillow==9.5.0
