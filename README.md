@@ -25,7 +25,7 @@ python -m pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wh
 python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
 ```
 - Clone this repository, go  to it and run `pip install -r requirements.txt`
-- Download weights from [here](https://cloud.dfki.de/owncloud/index.php/s/iYHg7b5rZRQH3Q7) and store them into **mask2former-custom-instance-segmentation** folder, so the path will look like `mask2former-custom-instance-segmentation/weights` and inside **weights** folder all **.pkl** files.
+- Download weights from [here](https://github.com/facebookresearch/Mask2Former/blob/main/MODEL_ZOO.md#instance-segmentation) and store them into **mask2former-custom-instance-segmentation/weights** folder, so the path will look like `mask2former-custom-instance-segmentation/weights` and inside **weights** folder **.pkl** file. Also name that file as `swin_base_patch4_window12_384.pkl`.
 
 ## Prepare dataset
 Make dataset in COCO format (annotations should be in [Object Detection](https://cocodataset.org/#format-data) format).
